@@ -1,54 +1,36 @@
 # voidgol
 
-This template should help get you started developing with Vue 3 in Vite.
+`voidgol` 是一个用于探索 **Web3D 技术栈** 的实验性仓库，聚焦 WebGL 与现代前端框架的结合实践。
 
-## Recommended IDE Setup
+`voidgol` is an experimental repository for exploring the **Web3D technology stack**, focusing on integrating WebGL with modern frontend frameworks.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## 技术方向 | Tech Stack
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- WebGL / Three.js
+- Vue Ecosystem (Vue / Router / Pinia / Vite)
+- 3D scene construction & rendering optimization
+- Camera control, interaction, and animation
+- Web3D engineering practices
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 项目目标 | Goals
 
-## Customize configuration
+- 作为 Web3D 技术的 **实验场与知识沉淀**
+- 验证不同 Web3D 实现方案的可行性
+- 积累可复用的 3D 场景与工具封装
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Serve as a **playground and knowledge base** for Web3D
+- Validate different Web3D implementation approaches
+- Accumulate reusable 3D scenes and utility abstractions
 
-## Project Setup
+## 说明 | Notes
 
-```sh
-npm install
-```
+本仓库以 **探索与实验** 为主，项目结构和实现可能随研究方向频繁调整，不保证 API 的长期稳定性。
 
-### Compile and Hot-Reload for Development
+This repository is mainly for **experimentation and exploration**.  
+Project structure and implementations may change frequently, and API stability is not guaranteed.
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+---
