@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import * as THREE from 'three'
 
@@ -20,7 +20,7 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', onResize)
 })
 
-function init() {
+function init () {
   const container = containerRef.value
   width = container.clientWidth
   height = container.clientHeight
@@ -68,7 +68,7 @@ function init() {
   window.addEventListener('resize', onResize)
 }
 
-function onResize() {
+function onResize () {
   const container = containerRef.value
   width = container.clientWidth
   height = container.clientHeight
@@ -78,17 +78,17 @@ function onResize() {
   renderer.setSize(width, height)
 }
 
-function onPointerMove(e) {
+function onPointerMove (e) {
   mouseX = e.offsetX - width / 2
   mouseY = e.offsetY - height / 2
 }
 
-function animate() {
+function animate () {
   animationId = requestAnimationFrame(animate)
   render()
 }
 
-function render() {
+function render () {
   camera.position.x += (mouseX - camera.position.x) * 0.05
   camera.position.y += (-mouseY - camera.position.y) * 0.05
   camera.lookAt(scene.position)
