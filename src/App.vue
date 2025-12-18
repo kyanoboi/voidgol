@@ -1,12 +1,5 @@
 <template>
-  <main>
+  <main class="h-screen w-screen">
     <RouterView />
   </main>
 </template>
-
-<style scoped>
-main {
-  height: 100vh;
-  width: 100vw;
-}
-</style>

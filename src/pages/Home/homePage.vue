@@ -101,21 +101,13 @@ function render () {
 </script>
 
 <template>
-  <div ref="containerRef" class="container"></div>
+  <div ref="containerRef" class="h-screen w-screen"></div>
   <div class="title">
-    <div class="text-magic" data-word="voidgol">
-      <div class="white"></div>
-    </div>
+    <div class="text-magic" data-word="voidgol" />
   </div>
 </template>
 
 <style lang="less" scoped>
-.container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
 .title {
   position: absolute;
   left: 0;
@@ -135,16 +127,6 @@ function render () {
   font-size: 24px;
   font-family: Raleway, Verdana, Arial;
   color: transparent;
-}
-
-.white {
-  position: absolute;
-  left: -10px;
-  width: 100%;
-  height: 1px;
-  background: #000;
-  z-index: 4;
-  animation: whiteMove 10s ease-out infinite;
 }
 
 .text-magic::before {
@@ -177,43 +159,6 @@ function render () {
   animation: move 1.1s infinite 0.2s;
 }
 
-@keyframes whiteMove {
-  9% {
-    top: 38px;
-  }
-
-  14% {
-    top: 8px;
-  }
-
-  18% {
-    top: 42px;
-  }
-
-  22% {
-    top: 1px;
-  }
-
-  32% {
-    top: 32px;
-  }
-
-  34% {
-    top: 12px;
-  }
-
-  40% {
-    top: 26px;
-  }
-
-  43% {
-    top: 7px;
-  }
-
-  99% {
-    top: 30px;
-  }
-}
 
 @keyframes move {
   10% {
