@@ -44,11 +44,11 @@ function init () {
 
   geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
 
-  const sprite = new THREE.TextureLoader().load('textures/sprites/disc.png')
+  const sprite = new THREE.TextureLoader().load('textures/sprites/earth.png')
   sprite.colorSpace = THREE.SRGBColorSpace
 
   material = new THREE.PointsMaterial({
-    size: 4,
+    size: 40,
     map: sprite,
     transparent: true,
     alphaTest: 0.5,
