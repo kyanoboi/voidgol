@@ -1,13 +1,15 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import * as THREE from 'three'
-import NavigationComp from './navigationComp.vue'
+import Sidebar from './components/SideBar.vue'
 
 const containerRef = ref(null)
 
 let camera, scene, renderer, material
-let mouseX = 0, mouseY = 0
-let width = 0, height = 0
+let mouseX = 0,
+  mouseY = 0
+let width = 0,
+  height = 0
 let animationId
 
 onMounted(() => {
@@ -21,7 +23,7 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', onResize)
 })
 
-function init () {
+function init() {
   const container = containerRef.value
   width = container.clientWidth
   height = container.clientHeight
@@ -39,7 +41,7 @@ function init () {
     vertices.push(
       2000 * Math.random() - 1000,
       2000 * Math.random() - 1000,
-      2000 * Math.random() - 1000
+      2000 * Math.random() - 1000,
     )
   }
 
@@ -53,7 +55,7 @@ function init () {
     map: sprite,
     transparent: true,
     alphaTest: 0.5,
-    sizeAttenuation: true
+    sizeAttenuation: true,
   })
 
   const points = new THREE.Points(geometry, material)
@@ -69,7 +71,7 @@ function init () {
   window.addEventListener('resize', onResize)
 }
 
-function onResize () {
+function onResize() {
   const container = containerRef.value
   width = container.clientWidth
   height = container.clientHeight
@@ -79,22 +81,22 @@ function onResize () {
   renderer.setSize(width, height)
 }
 
-function onPointerMove (e) {
+function onPointerMove(e) {
   mouseX = e.offsetX - width / 2
   mouseY = e.offsetY - height / 2
 }
 
-function animate () {
+function animate() {
   animationId = requestAnimationFrame(animate)
   render()
 }
 
-function render () {
+function render() {
   camera.position.x += (mouseX - camera.position.x) * 0.05
   camera.position.y += (-mouseY - camera.position.y) * 0.05
   camera.lookAt(scene.position)
 
-  const h = ((Date.now() * 0.00005) % 1)
+  const h = (Date.now() * 0.00005) % 1
   material.color.setHSL(h, 0.5, 0.5)
 
   renderer.render(scene, camera)
@@ -107,7 +109,7 @@ function render () {
     <div class="text-magic" data-word="voidgol" />
   </div>
   <div class="navigation">
-    <NavigationComp />
+    <Sidebar />
   </div>
 </template>
 
@@ -169,7 +171,6 @@ function render () {
   animation: move 1.1s infinite 0.2s;
 }
 
-
 @keyframes move {
   10% {
     top: -0.4px;
@@ -182,7 +183,7 @@ function render () {
   }
 
   30% {
-    left: .5px;
+    left: 0.5px;
   }
 
   40% {
