@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomePage from '@/pages/Home/homePage.vue'
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [{ path: '/', component: HomePage }],
+  routes: [
+    { path: '/', redirect: '/home' },
+    { path: '/home', component: () => import('@/pages/Home/indexPage.vue') },
+    { path: '/threeJs', component: () => import('@/pages/ThreeJS/indexPage.vue') },
+  ],
 })
 
 export default router

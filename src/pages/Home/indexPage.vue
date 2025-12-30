@@ -1,16 +1,19 @@
-<script setup>
+<script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import * as THREE from 'three'
-import Sidebar from './components/SideBar.vue'
+import Sidebar from '@/components/layout/SideBar.vue'
 
-const containerRef = ref(null)
+const containerRef = ref<HTMLDivElement | null>(null)
 
-let camera, scene, renderer, material
+let camera: THREE.PerspectiveCamera
+let scene: THREE.Scene
+let renderer: THREE.WebGLRenderer
+let material: THREE.PointsMaterial
 let mouseX = 0,
   mouseY = 0
 let width = 0,
   height = 0
-let animationId
+let animationId: number
 
 onMounted(() => {
   init()
@@ -25,6 +28,7 @@ onBeforeUnmount(() => {
 
 function init() {
   const container = containerRef.value
+  if (!container) return
   width = container.clientWidth
   height = container.clientHeight
 
@@ -73,6 +77,7 @@ function init() {
 
 function onResize() {
   const container = containerRef.value
+  if (!container) return
   width = container.clientWidth
   height = container.clientHeight
 
@@ -81,7 +86,7 @@ function onResize() {
   renderer.setSize(width, height)
 }
 
-function onPointerMove(e) {
+function onPointerMove(e: PointerEvent) {
   mouseX = e.offsetX - width / 2
   mouseY = e.offsetY - height / 2
 }
