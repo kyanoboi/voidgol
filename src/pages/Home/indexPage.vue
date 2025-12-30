@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import * as THREE from 'three'
-import Sidebar from '@/components/layout/SideBar.vue'
 
 const containerRef = ref<HTMLDivElement | null>(null)
 
@@ -113,18 +112,9 @@ function render() {
   <div class="title">
     <div class="text-magic" data-word="voidgol" />
   </div>
-  <div class="navigation">
-    <Sidebar />
-  </div>
 </template>
 
 <style lang="less" scoped>
-.navigation {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
 .title {
   position: absolute;
   left: 0;

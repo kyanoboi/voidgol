@@ -12,19 +12,22 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from '@/components/ui/sidebar'
+import { useRouter } from 'vue-router'
 
 defineProps<{
   items: {
     title: string
-    url: string
+    path: string
     icon?: LucideIcon
     isActive?: boolean
     items?: {
       title: string
-      url: string
+      path: string
     }[]
   }[]
 }>()
+
+const router = useRouter()
 </script>
 
 <template>
@@ -40,7 +43,10 @@ defineProps<{
       >
         <SidebarMenuItem>
           <CollapsibleTrigger as-child>
-            <SidebarMenuButton :tooltip="item.title">
+            <SidebarMenuButton
+              :tooltip="item.title"
+              v-on:click="() => Boolean(item.path) && router.push(item.path)"
+            >
               <component :is="item.icon" v-if="item.icon" />
               <span>{{ item.title }}</span>
               <ChevronRight
@@ -53,7 +59,7 @@ defineProps<{
             <SidebarMenuSub>
               <SidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
                 <SidebarMenuSubButton as-child>
-                  <a :href="subItem.url">
+                  <a v-on:click="() => router.push(subItem.path)">
                     <span>{{ subItem.title }}</span>
                   </a>
                 </SidebarMenuSubButton>

@@ -18,17 +18,17 @@ import NavMain from './NavMain.vue'
 const navMain = [
   {
     title: 'Home',
-    url: '#',
+    path: '/',
     icon: Home,
   },
   {
     title: 'Examples',
-    url: '#',
+    path: '',
     icon: ListTodo,
     items: [
-      { title: 'Three.js', url: '#/examples/three' },
-      { title: 'WebGL', url: '#/examples/webgl' },
-      { title: 'ArcGIS', url: '#/examples/arcgis' },
+      { title: 'Three.js', path: '/threejs' },
+      { title: 'WebGL', path: '/webgl' },
+      { title: 'ArcGIS', path: '/arcgis' },
     ],
   },
 ]
