@@ -5,7 +5,16 @@ const router = createRouter({
   routes: [
     { path: '/', redirect: '/home' },
     { path: '/home', component: () => import('@/pages/Home/indexPage.vue') },
-    { path: '/threejs', component: () => import('@/pages/ThreeJS/indexPage.vue') },
+    {
+      path: '/threejs',
+      component: () => import('@/pages/ThreeJS/indexPage.vue'),
+      children: [
+        {
+          path: 'camera',
+          component: () => import('@/pages/ThreeJS/components/Camera/CameraIndex.vue'),
+        },
+      ],
+    },
     { path: '/webgl', component: () => import('@/pages/WebGL/indexPage.vue') },
     {
       path: '/:pathMatch(.*)*',

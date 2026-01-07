@@ -49,6 +49,7 @@ const carouselItems = ref([
     <CarouselPrevious />
     <CarouselNext />
   </Carousel>
+  <router-view />
 </template>
 
 <style lang="less" scoped></style>
