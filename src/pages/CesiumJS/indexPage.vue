@@ -1,5 +1,5 @@
 <template>
-  <div>WebGL</div>
+  <div>CesiumJS</div>
 </template>
 
 <script setup lang="ts"></script>
