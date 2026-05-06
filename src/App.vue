@@ -30,6 +30,6 @@ import LoadingPage from '@/components/layout/LoadingPage.vue'
 nav {
   position: absolute;
   top: 20px;
-  right: 20px;
+  left: 20px;
 }
 </style>

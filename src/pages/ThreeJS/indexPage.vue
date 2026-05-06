@@ -8,11 +8,13 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import { ref } from 'vue'
+import CameraIndex from './components/Camera/CameraIndex.vue'
 
 const carouselItems = ref([
   {
     id: 1,
     title: 'Camera',
+    content: CameraIndex,
   },
   {
     id: 2,
@@ -37,13 +39,12 @@ const carouselItems = ref([
   <Carousel class="w-full max-w-lg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
     <CarouselContent>
       <CarouselItem v-for="item in carouselItems" :key="item.id">
-        <div class="p-1">
-          <Card>
-            <CardContent class="flex aspect-square items-center justify-center p-6">
-              <span class="text-4xl font-semibold">{{ item.title }}</span>
-            </CardContent>
-          </Card>
-        </div>
+        <Card>
+          <span class="text-4xl font-semibold">{{ item.title }}</span>
+          <CardContent class="flex aspect-square items-center justify-center">
+            <component :is="item.content" v-if="item.content" />
+          </CardContent>
+        </Card>
       </CarouselItem>
     </CarouselContent>
     <CarouselPrevious />

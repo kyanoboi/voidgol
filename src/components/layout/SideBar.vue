@@ -36,8 +36,7 @@ const navMain = [
 
 <template>
   <SidebarProvider :default-open="false">
-    <SidebarTrigger />
-    <Sidebar :side="'right'" :variant="'floating'" :collapsible="'offcanvas'">
+    <Sidebar :side="'left'" :variant="'floating'" :collapsible="'offcanvas'">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -63,5 +62,6 @@ const navMain = [
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
+    <SidebarTrigger />
   </SidebarProvider>
 </template>
